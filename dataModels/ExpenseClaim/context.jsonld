@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "org": "https://www.w3.org/ns/org#",
+        "frapo": "http://purl.org/cerif/frapo#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "alias": "schema:alternateName",
+        "caucus": "org:Organization",
+        "contractExpense": "frapo:Expenditure",
+        "dateCreated": "schema:dateCreated",
+        "expenseDate": "schema:releaseDate",
+        "hospitalityExpense": "frapo:Expenditure",
+        "salaryExpense": "frapo:Expenditure",
+        "travelExpense": "frapo:Expenditure",
+        "reportedBy": "schema:author"
+    }
+}

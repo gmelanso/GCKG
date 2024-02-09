@@ -1,0 +1,16 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "org": "https://www.w3.org/ns/org#",
+        "frapo": "http://purl.org/cerif/frapo#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "alias": "schema:alternateName",
+        "addressRegion": "schema:addressRegion",
+        "dateCreated": "prov:generatedAtTime",
+        "familyName": "schema:familyName",
+        "givenName": "schema:givenName",
+        "honorificPrefix": "schema:honorificPrefix",
+        "memberOf": "org:memberOf",
+        "reportedExpenditure": "frapo:specifiesExpenditure"
+    }
+}

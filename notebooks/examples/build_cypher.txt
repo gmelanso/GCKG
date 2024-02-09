@@ -1,0 +1,58 @@
+LOAD CSV WITH HEADERS FROM "file:///Expenditure.csv" AS row
+CREATE (:Expenditure {
+    id: row.id,
+    contractExpense: row.contractExpense,
+    hospitalityExpense: row.hospitalityExpense,
+    salaryExpense: row.salaryExpense,
+    travelExpense: row.travelExpense,
+    expenseDate: row.expenseDate
+
+});
+
+LOAD CSV WITH HEADERS FROM "file:///Caucus.csv" AS row
+CREATE (:Organization {
+    id: row.id,
+    name: row.name
+});
+
+LOAD CSV WITH HEADERS FROM "file:///MemberOfParliament.csv" AS row
+CREATE (:MemberOfParliament {
+    id: row.id,
+    givenName: row.givenName,
+    familyName: row.familyName
+});
+
+LOAD CSV WITH HEADERS FROM "file:///ContractClaim.csv" AS row
+CREATE (:ContractClaim {
+    id: row.id,
+    quarter: row.quarter,
+    expenseTotal: row.expenseTotal
+});
+
+LOAD CSV WITH HEADERS FROM "file:///HospitalityClaim.csv" AS row
+CREATE (:HospitalityClaim {
+    id: row.id,
+    quarter: row.quarter,
+    expenseTotal: row.expenseTotal,
+    numberOfAttendees: row.numberOfAttendees
+});
+
+LOAD CSV WITH HEADERS FROM "file:///TravelClaim.csv" AS row
+CREATE (:HospitalityClaim {
+    id: row.id,
+    quarter: row.quarter,
+    expenseTotal: row.totalExpense,
+    numberOfAttendees: row.numberOfAttendees
+});
+
+LOAD CSV WITH HEADERS FROM "file:///Trip.csv" AS row
+CREATE (:HospitalityClaim {
+    id: row.id,
+    quarter: row.quarter
+});
+
+LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS row
+MATCH (h {id: row.head})
+MATCH (t {id: row.tail})
+CALL apoc.create.relationship(h, row.relation, {}, t) YIELD rel
+RETURN h, rel, t;

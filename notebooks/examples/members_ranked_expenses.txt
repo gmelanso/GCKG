@@ -1,0 +1,15 @@
+MATCH (c:Organization)-[r1]->(a:Agent)-[r2]->(e:Expenditure)
+WITH c, a, SUM(toFloat(e.travelExpense) + toFloat(e.contractExpense) + toFloat(e.hospitalityExpense) + toFloat(e.salaryExpense)) AS totalExpenses
+
+// Create a table with columns for each distinct Caucus
+WITH c, COLLECT({agentName: a.givenName + " " + a.familyName, totalExpenses: totalExpenses}) AS agentsData
+
+// Unwind the list of agents for each Caucus
+UNWIND agentsData AS agentData
+
+// Return the results in the desired format
+RETURN
+  c.name AS caucusName,
+  agentData.agentName AS MOP,
+  agentData.totalExpenses AS totalExpenses
+ORDER BY totalExpenses DESC;

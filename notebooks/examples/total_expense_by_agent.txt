@@ -1,0 +1,5 @@
+MATCH (a:Agent)-[:reportedExpenditure]->(e:Expenditure)
+WITH a, toFloat(e.travelExpense) + toFloat(e.contractExpense) + toFloat(e.hospitalityExpense) + toFloat(e.salaryExpense) AS totalSum
+WHERE totalSum IS NOT NULL
+RETURN a, totalSum
+order by totalSum DESC;
