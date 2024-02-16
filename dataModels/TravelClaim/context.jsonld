@@ -1,0 +1,23 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "frapo": "http://purl.org/cerif/frapo#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "accomodations": "frapo:hasCost",
+        "alias": "schema:alternateName",
+        "archivedAt": "schema:archivedAt",
+        "claimId": "frapo:identifier",
+        "dateCreated": "schema:dateCreated",
+        "endDate": "schema:endDate",
+        "expenseDate": "schema:releaseDate",
+        "expenseTotal": "frapo:expenditureToDate",
+        "incidentals": "frapo:hasCost",
+        "municipality": "schema:addressLocality",
+        "partOfExpense": "schema:isPartOf",
+        "reportedBy": "schema:author",
+        "startDate": "schema:startDate",
+        "subTrip": "schema:subTrip",
+        "transportation": "frapo:hasCost",
+        "vendor": "schema:vendor"
+    }
+}

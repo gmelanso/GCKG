@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "frapo": "http://purl.org/cerif/frapo#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "alias": "schema:alternateName",
+        "archivedAt": "schema:archivedAt",
+        "claimId": "frapo:identifier",
+        "dateCreated": "schema:dateCreated",
+        "expenseDate": "schema:releaseDate",
+        "expenseTotal": "frapo:expenditureToDate",
+        "municipality": "schema:addressLocality",
+        "partOfExpense": "schema:isPartOf",
+        "reportedBy": "schema:author",
+        "vendor": "schema:vendor"
+    }
+}

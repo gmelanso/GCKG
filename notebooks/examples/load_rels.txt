@@ -1,0 +1,7 @@
+LOAD CSV WITH HEADERS FROM "file:///rels.csv" AS row
+CALL {
+    WITH row
+    MATCH (h {id: row.head})
+    MATCH (t {id: row.tail})
+    
+    MERGE (h)-[row.relation]->(t)} IN TRANSACTIONS OF 10000 ROWS;

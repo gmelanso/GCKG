@@ -5,13 +5,15 @@
         "frapo": "http://purl.org/cerif/frapo#",
         "prov": "http://www.w3.org/ns/prov#",
         "alias": "schema:alternateName",
+        "archivedAt": "schema:archivedAt",
         "caucus": "org:Organization",
         "contractExpense": "frapo:Expenditure",
-        "dateCreated": "schema:dateCreated",
-        "expenseDate": "schema:releaseDate",
+        "dateCreated": "prov:generatedAtTime",
+        "Expenditure": "frapo:Expenditure",
+        "expenseDate": "schema:dateIssued",
         "hospitalityExpense": "frapo:Expenditure",
         "salaryExpense": "frapo:Expenditure",
         "travelExpense": "frapo:Expenditure",
-        "reportedBy": "schema:author"
+        
     }
 }

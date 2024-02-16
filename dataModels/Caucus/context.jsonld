@@ -1,0 +1,13 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "org": "https://www.w3.org/ns/org#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "alias": "schema:alternateName",
+        "Caucus": "org:Organization",
+        "dateCreated": "prov:generatedAtTime",
+        "name": "schema:name",
+        "hasMember": "org:hasMember",
+        "associatedExpense": "frapo:specifiesExpenditure"
+    }
+}

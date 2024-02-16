@@ -51,8 +51,6 @@ CREATE (:HospitalityClaim {
     quarter: row.quarter
 });
 
-LOAD CSV WITH HEADERS FROM "file:///relations.csv" AS row
-MATCH (h {id: row.head})
-MATCH (t {id: row.tail})
-CALL apoc.create.relationship(h, row.relation, {}, t) YIELD rel
-RETURN h, rel, t;
+CREATE CONSTRAINT m_id FOR (m:MemberOfParliament) REQUIRE m.id IS UNIQUE
+CREATE CONSTRAINT c_id FOR (c:Caucus) REQUIRE c.id IS UNIQUE
+CREATE CONSTRAINT cc_id FOR (cc:ContractClaim) REQUIRE cc.name IS UNIQUE
