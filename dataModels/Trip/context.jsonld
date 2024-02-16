@@ -1,0 +1,16 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "frapo": "http://purl.org/cerif/frapo#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "accomodations": "frapo:hasCost",
+        "alias": "schema:alternateName",
+        "archivedAt": "schema:archivedAt",
+        "claimId": "frapo:identifier",
+        "dateCreated": "schema:dateCreated",
+        "departureDate": "schema:departureTime",
+        "isPartOf": "schema:isPartOf",
+        "tripDestination": "schema:tripDestination",
+        "tripOrigin": "schema:tripOrigin"
+    }
+}

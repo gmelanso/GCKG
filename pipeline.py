@@ -73,11 +73,10 @@ def relations_table(df):
     features= [rel for rel in df.columns if rel in RELATIONS_LIST]
     rel_df= pd.DataFrame()
     for rel in features:
-        df_exploded= df.explode(rel)
         rels= pd.DataFrame({
-            'head': df_exploded['id'],
+            'head': df['id'],
             'relation': rel,
-            'tail': df_exploded[rel]
+            'tail': df[rel]
         })
         rel_df = pd.concat([rel_df, rels], ignore_index=True)
     return rel_df
@@ -147,11 +146,11 @@ class Pipeline:
     def load(self):
         rels= pd.DataFrame()
         for k, v in self.output_data.items():
-            PROPERTIES= properties_table(v)
-            PROPERTIES.to_csv(f'entities/csv/{k}.csv')
-            RELATIONS= relations_table(v)
-            rels= pd.concat([rels, RELATIONS], ignore_index=True)
-        rels.to_csv("entities/csv/relations.csv")
+            #PROPERTIES= properties_table(v)
+            v.to_csv(f'entities/csv/{k}.csv')
+            #RELATIONS= relations_table(v)
+            #rels= pd.concat([rels, RELATIONS], ignore_index=True)
+        #rels.to_csv("entities/csv/relations.csv")
     
     def run(self):
         self.extract()

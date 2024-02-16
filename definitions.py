@@ -147,7 +147,7 @@ class HospitalityClaim(Entity):
         "dateCreated",
         "municipality",
         "numberOfAttendees",
-        "purchaseDate",
+        "expenseDate",
         "purpose",
         "quarter",
         "expenseTotal",
@@ -160,7 +160,7 @@ class HospitalityClaim(Entity):
     ]
 
     ATTR_MAP= {
-        "Date": "purchaseDate",
+        "Date": "expenseDate",
         "Total of Attendees": "numberOfAttendees",
         "Purpose of Hospitality": "purpose",
         "Type of Event": "typeOfEvent",
